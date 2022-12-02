@@ -76,7 +76,7 @@ export default function Signin() {
                   InputProps={{
                     disableUnderline: true,
                   }}
-                  value={email} 
+                  value={''} 
                 />
               </Grid>
               <br/><br/><br/>
