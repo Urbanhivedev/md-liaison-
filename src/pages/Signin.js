@@ -15,7 +15,7 @@ export default function Signin() {
    const [fname, setfName] = useState('');
     const [lname, setlName] = useState('');
     const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -76,7 +76,7 @@ export default function Signin() {
                   InputProps={{
                     disableUnderline: true,
                   }}
-                  value={''} 
+                  value={email} onChange={(e)=>{setEmail(e.target.value)}}
                 />
               </Grid>
               <br/><br/><br/>
