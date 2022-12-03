@@ -45,9 +45,9 @@ export const applyToJob = (jobId,candidateId,applicant,jobDetails) => async (dis
         dispatch(fetchApplyPending());
         // db.collection('users').where("uid", "!=", fb.auth().currentUser.uid)
         const jobRef = doc(db,'Jobs',jobId)
-        candidateRef = doc(db,'Candidates',candidateId)
+       const candidateRef = doc(db,'Candidates',candidateId)
 
-        getDoc(josRef)
+        getDoc(jobRef)
         .then((doc) => {
             let newAppliedList
             newAppliedList = doc.data().applied
@@ -74,7 +74,7 @@ export const applyToJob = (jobId,candidateId,applicant,jobDetails) => async (dis
         appliedJobs.push(jobDetails)
         console.log('the applied jobs for this candidate are:-, ', appliedJobs);
 
-        updateDoc(candidateId, {
+        updateDoc(candidateRef, {
             JobsApplied:appliedJobs
            })
 
