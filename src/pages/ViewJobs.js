@@ -170,8 +170,8 @@ export default function ViewJob() {
               type="submit"
               // fullWidth
               variant="contained"
-              style={{backgroundColor: 'black', color: 'white', width: '70%',  fontSize:"15px"}}
-               sx={{ mt: 7, mb: 2 , width:100}}
+              style={{backgroundColor: 'black', color: 'white', width: '40%',  fontSize:'15px',position:'relative', left:'30%'}}
+               sx={{ mt: 7, mb: 2 }}
                
               onClick={applyToRole}
             >
@@ -179,7 +179,7 @@ export default function ViewJob() {
             </Button>
           </Grid>
         </Container>
-        {applyStatus === "applied" &&  <center style={{backgroundColor:'#D9E7E2',width:'50%',fontSize:"24px"}}>Applied Successfully! </center>}
+        {applyStatus === "Applied!" && <div style={{display:"flex",justifyContent:"center"}}> <center style={{backgroundColor:'#D9E7E2',width:'30%',fontSize:"24px"}}>Applied Successfully! </center></div>}
       </Layout>
   );
 }
