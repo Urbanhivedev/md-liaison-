@@ -5,7 +5,7 @@ import { getFirestore, collection, where , query ,getDocs ,addDoc, deleteDoc ,do
 import { db, fb, auth, storage } from '../../config/firebase';
 
   
-    export const fetchAllJobs = (uid) => async (dispatch) => {
+    export const fetchAllJobs = () => async (dispatch) => {
             dispatch(fetchAllJobsPending());
             // db.collection('users').where("uid", "!=", fb.auth().currentUser.uid)
             getDocs(collection(db,'Jobs'))
@@ -44,16 +44,17 @@ export const fetchJob = (id) => async (dispatch) => {
 export const applyToJob = (jobId,candidateId,applicant,jobDetails) => async (dispatch) => {
         dispatch(fetchApplyPending());
         // db.collection('users').where("uid", "!=", fb.auth().currentUser.uid)
-        
+        const jobRef = doc(db,'Jobs',jobId)
+        candidateRef = doc(db,'Candidates',candidateId)
 
-        getDoc(doc(db,'Jobs',jobId))
+        getDoc(josRef)
         .then((doc) => {
             let newAppliedList
             newAppliedList = doc.data().applied
             newAppliedList.push(applicant)
             console.log('the applied candidates for this job are:-, ', newAppliedList);
 
-            updateDoc(doc(db,'Jobs',jobId), {
+            updateDoc(jobRef, {
                 applied:newAppliedList
                })
 
@@ -66,16 +67,18 @@ export const applyToJob = (jobId,candidateId,applicant,jobDetails) => async (dis
 });
 
 
-    getDoc(doc(db,'Candidates',candidateId))
+    getDoc(candidateRef)
     .then((doc) => {
         let appliedJobs
         appliedJobs = doc.data().JobsApplied
         appliedJobs.push(jobDetails)
         console.log('the applied jobs for this candidate are:-, ', appliedJobs);
 
-        updateDoc(doc(db,'Candidates',candidateId), {
+        updateDoc(candidateId, {
             JobsApplied:appliedJobs
            })
+
+           dispatch(fetchApplySuccess("Applied!"));
         
 }).catch((error) => {
         var errorMessage = error.message;
