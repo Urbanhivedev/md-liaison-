@@ -30,6 +30,11 @@ export default function ViewJob() {
     const [applicant,setApplicant] = useState();
     const [jobDetails,setJobDetails] = useState();
 
+    /*just makeshift loading boards */
+    const [localLoading,setLocalLoading] = useState(false);
+    const [localApplied,setLocalApplied] = useState(false);
+     /*just makeshift loading boards END */
+
    /*const { singleJob, error,message, isLoading } = useSelector((state) => state.singleJob);*/
     const { allJobs, jobsError,jobsMessage, jobsIsLoading } = useSelector((state) => state.jobs);
     const { userDetails, loginError,loginMessage, loginIsLoading } = useSelector((state) => state.loggedIn);
@@ -55,6 +60,13 @@ export default function ViewJob() {
     const applyToRole= () => {
       dispatch(applyToJob(jobId,candidateId,applicant,jobDetails))
      console.log("hello")
+
+     setLocalLoading(true);
+    
+     setTimeout(() => {
+      setLocalLoading(false);
+      setLocalApplied(true);
+  }, 2000);
     }
 
     const myHeader = {
@@ -179,7 +191,8 @@ export default function ViewJob() {
             </Button>
           </Grid>
         </Container>
-        {applyStatus === "Applied!" && <div style={{display:"flex",justifyContent:"center"}}> <center style={{backgroundColor:'#D9E7E2',width:'30%',fontSize:"24px"}}>Applied Successfully! </center></div>}
+        {localApplied === "Applied!" && <div style={{display:"flex",justifyContent:"center"}}> <center style={{backgroundColor:'#C0C0C0',width:'30%',fontSize:"24px"}}>loading... </center></div>}
+        {localApplied === "Applied!" && <div style={{display:"flex",justifyContent:"center"}}> <center style={{backgroundColor:'#D9E7E2',width:'30%',fontSize:"24px"}}>Applied Successfully! </center></div>}
       </Layout>
   );
 }
