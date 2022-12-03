@@ -88,7 +88,7 @@ export default function ViewJob() {
   return (
       <Layout>
 
-           {applyStatus === "applied" &&  <center style={{backgroundColor:'#D9E7E2',width:'50%',fontSize:"24px"}}>Applied Successfully! </center>}
+          
 
          <Container maxWidth="lg" sx={{ mt: 3, mb: 4 }}>
           <Grid container spacing={2}>
@@ -179,7 +179,7 @@ export default function ViewJob() {
             </Button>
           </Grid>
         </Container>
-
+        {applyStatus === "applied" &&  <center style={{backgroundColor:'#D9E7E2',width:'50%',fontSize:"24px"}}>Applied Successfully! </center>}
       </Layout>
   );
 }
