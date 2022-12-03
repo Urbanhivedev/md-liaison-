@@ -22,6 +22,7 @@ export default function Signin() {
     const [lname, setlName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+    const [checkDetails, setCheckDetails] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
@@ -31,7 +32,7 @@ export default function Signin() {
     
     useEffect(() => {
       console.log(userDetails)
-      if(userDetails !== '' ){
+     if(userDetails !== '' ){
        
         history.push('/')
         
@@ -64,6 +65,12 @@ export default function Signin() {
     
     console.log(userDetails)
     dispatch(login(email,password));
+    setTimeout(() => {
+      window.location.reload()
+  }, 1500);
+    
+    
+   
   }
 
   return (
@@ -86,7 +93,7 @@ export default function Signin() {
           }}
         >
           <Box>
-          <form component="form" onSubmit={console.log("submitted")} sx={{ mt: 3 }}>
+          <form component="form" /*onSubmit={console.log("submitted")}*/ sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={10} sm={2.5} sx={{mt: 1}} style={{border: '0px solid red'}}>
                 <p style={mystyle}>EMAIL:</p>
@@ -129,7 +136,7 @@ export default function Signin() {
               <Grid item xs={12} sm={12} style={{border: '0px solid red'}}>
               <center>
              <Button
-              type="submit"
+              type="button"
               // fullWidth
               variant="contained"
               style={{backgroundColor: 'black', height:"40px", width: '30%',  fontSize:"15px"}}
