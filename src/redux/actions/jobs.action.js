@@ -1,5 +1,6 @@
 import {fetchAllJobsPending, fetchAllJobsSuccess, fetchAllJobsFailed } from '../reducers/jobs.slice';
 import {fetchJobPending, fetchJobSuccess, fetchJobFailed, } from '../reducers/singleJob.slice';
+import {fetchApplyPending, fetchApplySuccess, fetchApplyFailed, } from '../reducers/apply.slice';
 import { getFirestore, collection, where , query ,getDocs ,addDoc, deleteDoc ,doc, getDoc ,updateDoc,onSnapshot,Timestamp} from 'firebase/firestore';
 import { db, fb, auth, storage } from '../../config/firebase';
 
@@ -37,5 +38,50 @@ export const fetchJob = (id) => async (dispatch) => {
             console.log('Error fetching profile', errorMessage);
             dispatch(fetchJobFailed({ errorMessage }));
     });
+
+};
+
+export const applyToJob = (jobId,candidateId,applicant,jobDetails) => async (dispatch) => {
+        dispatch(fetchApplyPending());
+        // db.collection('users').where("uid", "!=", fb.auth().currentUser.uid)
+        
+
+        getDoc(doc(db,'Jobs',jobId))
+        .then((doc) => {
+            let newAppliedList
+            newAppliedList = doc.data().applied
+            newAppliedList.push(applicant)
+            console.log('the applied candidates for this job are:-, ', newAppliedList);
+
+            updateDoc(doc(db,'Jobs',jobId), {
+                applied:newAppliedList
+               })
+            
+    }).catch((error) => {
+        var errorMessage = error.message;
+        console.log('Error fetching profile', errorMessage);
+        dispatch(fetchApplyFailed({ errorMessage }));
+});
+
+
+    getDoc(doc(db,'Candidates',candidateId))
+    .then((doc) => {
+        let appliedJobs
+        appliedJobs = doc.data().JobsApplied
+        appliedJobs.push(applicant)
+        console.log('the applied jobs for this candidate are:-, ', appliedJobs);
+
+        updateDoc(doc(db,'Candidates',candidateId), {
+            JobsApplied:appliedJobs
+           })
+        
+}).catch((error) => {
+        var errorMessage = error.message;
+        console.log('Error fetching profile', errorMessage);
+        dispatch(fetchApplyFailed({ errorMessage }));
+});
+    
+    
+    
 
 };

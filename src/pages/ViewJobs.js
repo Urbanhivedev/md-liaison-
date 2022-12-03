@@ -13,6 +13,7 @@ import JobLogo from '../assets/images/flutter-thumbnail.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchJob } from '../redux/actions/jobs.action';
 import { fetchAllJobs } from '../redux/actions/jobs.action';
+import { applyToJob } from '../redux/actions/jobs.action';
 /*REDUX AND FIREBASE IMPORTS END */
 
 
@@ -25,21 +26,25 @@ export default function ViewJob() {
     console.log(id) 
     const [job,setJob] = useState();
 
-   const { singleJob, error,message, isLoading } = useSelector((state) => state.singleJob);
-    /*const { allJobs, error,message, isLoading } = useSelector((state) => state.jobs);*/
+   /*const { singleJob, error,message, isLoading } = useSelector((state) => state.singleJob);*/
+    const { allJobs, error,message, isLoading } = useSelector((state) => state.jobs);
 
     useEffect(() => {
-      dispatch(fetchJob(id));
+      dispatch(fetchAllJobs());
       
+      const singleJob = allJobs.filter((job)=>(job.id === id))
       console.log(singleJob)
-
     
 
-      setJob(singleJob)
+      setJob(...singleJob)
       console.log(error)
        
        
     }, [])
+
+    const applyToRole= () => {
+      dispatch(applyToJob(jobId,candidateId,applicant,jobDetails))
+    }
 
     const myHeader = {
       fontFamily: 'Arial',
@@ -141,6 +146,23 @@ export default function ViewJob() {
                 <p>{job && job.description}
                 </p>
             </Grid>
+
+            
+            </Grid>
+
+            <Grid item xs={12} md={6} lg={3}>
+                <br/><br/>
+             <Button
+              type="submit"
+              // fullWidth
+              variant="contained"
+              style={{backgroundColor: 'black', color: 'white', width: '70%',  fontSize:"15px"}}
+               sx={{ mt: 7, mb: 2 , width:100}}
+               
+              onClick={applyToRole}
+            >
+              APPLY
+            </Button>
           </Grid>
         </Container>
 

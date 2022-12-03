@@ -5,12 +5,14 @@ import thunk from 'redux-thunk';
 
 import candidatesReducer from './reducers/candidates.slice';
 import jobsReducer from './reducers/jobs.slice';
+import applyReducer from './reducers/apply.slice';
 import singleJobReducer from './reducers/singleJob.slice';
 import companiesReducer from './reducers/companies.slice';
 
 const reducers = combineReducers({
 candidates:candidatesReducer,
 jobs:jobsReducer,
+apply:applyReducer,
 singleJob:singleJobReducer,
 companies:companiesReducer,
 });
