@@ -1,29 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  applyStatus: "not applied",
+  userDetails:'',
   isLoading: false,
   error: 'none',
   message: 'none',
 };
 
-const applySlice = createSlice({
+const loggedInSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
-    fetchApplyPending: (state) => {
+    loginPending: (state) => {
       state.isLoading = true;
       state.error = '';
       state.message = '';
     },
-    fetchApplySuccess: (state, action) => {
+    loginSuccess: (state, action) => {
          console.log(action)
       state.isLoading = false;
-        state.applyStatus = action.payload;
+        state.userDetails = action.payload;
         state.error = '';
         state.message = action.payload.msg;
     },
-    fetchApplyFailed: (state, { payload }) => {
+    loginFailed: (state, { payload }) => {
       (state.isLoading = false);
         (state.error = payload.errorMessage);
     },
@@ -33,12 +33,12 @@ const applySlice = createSlice({
   },
 });
 
-const { actions, reducer } = applySlice;
+const { actions, reducer } = loggedInSlice;
 
 export const {
-  fetchApplyPending,
-  fetchApplySuccess,
-  fetchApplyFailed,
+  loginPending,
+  loginSuccess,
+  loginFailed,
 
 } = actions;
 

@@ -8,6 +8,7 @@ import jobsReducer from './reducers/jobs.slice';
 import applyReducer from './reducers/apply.slice';
 import singleJobReducer from './reducers/singleJob.slice';
 import companiesReducer from './reducers/companies.slice';
+import loggedInReducer from './reducers/loggedIn.slice';
 
 const reducers = combineReducers({
 candidates:candidatesReducer,
@@ -15,6 +16,7 @@ jobs:jobsReducer,
 apply:applyReducer,
 singleJob:singleJobReducer,
 companies:companiesReducer,
+loggedIn:loggedInReducer,
 });
 
 const persistConfig = {

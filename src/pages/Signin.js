@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+
 import Container from '@mui/material/Container';
 import {Box, Grid, TextField, Paper, Card, CardActions, CardContent, CircularProgress, Button, Typography, Divider, Chip} from '@mui/material';
 import Layout from "../components/Layout/layout";
 import CssBaseline from '@mui/material/CssBaseline';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, useHistory} from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MDliaison from '../assets/images/MDliaison.png';
+
+/*REDUX AND FIREBASE IMPORTS */
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../redux/actions/access.action';
+
+/*REDUX AND FIREBASE IMPORTS END */
 
 
 const theme = createTheme();
@@ -16,8 +22,24 @@ export default function Signin() {
     const [lname, setlName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
+    
+
+    const { userDetails, error,message, isLoading } = useSelector((state) => state.loggedIn);
+    
+    useEffect(() => {
+      console.log(userDetails)
+      if(userDetails !== '' ){
+       
+        history.push('/')
+        
+      }
+       
+       
+    }, [])
+
 
     const header = {
       fontFamily: 'Arial',
@@ -38,8 +60,10 @@ export default function Signin() {
         color: 'black'
       };
 
-  const userSignup = () => {
-    history.push('/2');
+  const userSignin = () => {
+    
+    console.log(userDetails)
+    dispatch(login(email,password));
   }
 
   return (
@@ -62,7 +86,7 @@ export default function Signin() {
           }}
         >
           <Box>
-          <form component="form" onSubmit={userSignup} sx={{ mt: 3 }}>
+          <form component="form" onSubmit={console.log("submitted")} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={10} sm={2.5} sx={{mt: 1}} style={{border: '0px solid red'}}>
                 <p style={mystyle}>EMAIL:</p>
@@ -93,7 +117,7 @@ export default function Signin() {
                     disableUnderline: true,
                   }}
 
-                />
+                  value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
               </Grid>
            
               <Grid item xs={12} sm={12} style={{border: '0px solid red'}}>
@@ -109,6 +133,7 @@ export default function Signin() {
               // fullWidth
               variant="contained"
               style={{backgroundColor: 'black', height:"40px", width: '30%',  fontSize:"15px"}}
+              onClick = {userSignin}
             //   sx={{ mt: 3, mb: 2 }}
             >
               SUBMIT

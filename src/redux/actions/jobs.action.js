@@ -56,6 +56,8 @@ export const applyToJob = (jobId,candidateId,applicant,jobDetails) => async (dis
             updateDoc(doc(db,'Jobs',jobId), {
                 applied:newAppliedList
                })
+
+               dispatch(fetchApplySuccess("Applied!"));
             
     }).catch((error) => {
         var errorMessage = error.message;
@@ -68,7 +70,7 @@ export const applyToJob = (jobId,candidateId,applicant,jobDetails) => async (dis
     .then((doc) => {
         let appliedJobs
         appliedJobs = doc.data().JobsApplied
-        appliedJobs.push(applicant)
+        appliedJobs.push(jobDetails)
         console.log('the applied jobs for this candidate are:-, ', appliedJobs);
 
         updateDoc(doc(db,'Candidates',candidateId), {

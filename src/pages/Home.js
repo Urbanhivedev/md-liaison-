@@ -20,6 +20,21 @@ export default function Home() {
     const dispatch = useDispatch();
     const history = useHistory();
 
+    const { userDetails, error,message, isLoading } = useSelector((state) => state.loggedIn);
+  console.log(userDetails)
+
+  useEffect(() => {
+    
+    if(userDetails === '' ){
+     
+      history.push('/signin')
+        
+    }
+     
+     
+  }, [])
+
+
     const mystyle = {
       fontFamily: 'Arial',
       fontStyle: 'normal',

@@ -25,25 +25,36 @@ export default function ViewJob() {
     const  {id } = useParams();
     console.log(id) 
     const [job,setJob] = useState();
+    const [candidateId,setCandidateId] = useState();
+    const [jobId,setJobId] = useState();
+    const [applicant,setApplicant] = useState();
+    const [jobDetails,setJobDetails] = useState();
 
    /*const { singleJob, error,message, isLoading } = useSelector((state) => state.singleJob);*/
-    const { allJobs, error,message, isLoading } = useSelector((state) => state.jobs);
-
+    const { allJobs, jobsError,jobsMessage, jobsIsLoading } = useSelector((state) => state.jobs);
+    const { userDetails, loginError,loginMessage, loginIsLoading } = useSelector((state) => state.loggedIn);
+    const { applyStatus, applyError,applyMessage, applyIsLoading } = useSelector((state) => state.apply);
     useEffect(() => {
       dispatch(fetchAllJobs());
       
       const singleJob = allJobs.filter((job)=>(job.id === id))
       console.log(singleJob)
-    
+      
 
       setJob(...singleJob)
-      console.log(error)
+
+      setCandidateId(userDetails.id)
+      setApplicant({name:userDetails.name})
+      setJobDetails({title:singleJob[0].title,jobNumber:singleJob[0].jobNumber})
+      setJobId(id)
+      
        
        
     }, [])
 
     const applyToRole= () => {
       dispatch(applyToJob(jobId,candidateId,applicant,jobDetails))
+     console.log("hello")
     }
 
     const myHeader = {
@@ -76,6 +87,9 @@ export default function ViewJob() {
 
   return (
       <Layout>
+
+           {applyStatus === "applied" &&  <center style={{backgroundColor:'#D9E7E2',width:'50%',fontSize:"24px"}}>Applied Successfully! </center>}
+
          <Container maxWidth="lg" sx={{ mt: 3, mb: 4 }}>
           <Grid container spacing={2}>
             <Grid
