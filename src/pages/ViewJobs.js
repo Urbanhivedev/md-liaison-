@@ -191,8 +191,8 @@ export default function ViewJob() {
             </Button>
           </Grid>
         </Container>
-        {localApplied === "Applied!" && <div style={{display:"flex",justifyContent:"center"}}> <center style={{backgroundColor:'#C0C0C0',width:'30%',fontSize:"24px"}}>loading... </center></div>}
-        {localApplied === "Applied!" && <div style={{display:"flex",justifyContent:"center"}}> <center style={{backgroundColor:'#D9E7E2',width:'30%',fontSize:"24px"}}>Applied Successfully! </center></div>}
+        {localLoading  && <div style={{display:"flex",justifyContent:"center"}}> <center style={{width:'30%',fontSize:"24px"}}>loading... </center></div>}
+        {localApplied  && <div style={{display:"flex",justifyContent:"center"}}> <center style={{backgroundColor:'#D9E7E2',width:'30%',fontSize:"24px"}}>Applied Successfully! </center></div>}
       </Layout>
   );
 }
