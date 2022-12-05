@@ -17,6 +17,7 @@ export default function HomeBox({type, BoxIcon}) {
       {/* <Title>...........................<span className='wave'>💸</span></Title> */}
       <Divider />
       <br/><br/>
+      <Link color="primary" to="/jobs" >
       <center>
       <BoxIcon />
       <br/><br/>
@@ -25,15 +26,18 @@ export default function HomeBox({type, BoxIcon}) {
             variant="h6"
             component="p"
           >
+           
         <b>{type}</b>
+        
       </Typography></center>
+      </Link>
       <Typography color="text.secondary" sx={{ flex: 1 }}>
       </Typography>
-      <div>
+     {/* <div>
         <Link color="primary" to="/transactions" onClick={preventDefault}>
           View
         </Link>
-      </div>
+      </div>*/}
     </React.Fragment>
   );
 }

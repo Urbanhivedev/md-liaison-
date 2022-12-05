@@ -43,7 +43,7 @@ export default function Signin() {
 
 
     const header = {
-      fontFamily: 'Arial',
+      fontFamily: 'Roboto', //used to be ARIAL
       fontStyle: 'normal',
       fontWeight: 700,
       fontSize: '29px',
@@ -53,7 +53,7 @@ export default function Signin() {
     };
 
     const mystyle = {
-        fontFamily: 'Arial',
+        fontFamily: 'Roboto', //used to be ARIAL
         fontStyle: 'normal',
         fontWeight: 400,
         fontSize: '21px',
@@ -117,6 +117,7 @@ export default function Signin() {
               <Grid item xs={12} sm={8} style={{border: '0px solid red'}}>
                 <TextField
                   variant="standard"
+                  type="password"
                   style={{border: '1px solid black', width: 380, height: 45, padding: 2}}
                   required
                   fullWidth

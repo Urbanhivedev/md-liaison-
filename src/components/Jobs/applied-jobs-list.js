@@ -187,7 +187,7 @@ export default function AppliedJobsList() {
               variant="contained"
               style={{backgroundColor: 'black', color: 'white', width: '70%',  fontSize:"15px"}}
               sx={{ mt: 7, mb: 2 }}
-              onClick={viewJobsFxn}
+          onClick={console.log("remember to re-include this function later")/*viewJobsFxn*/}
             >
               VIEW
             </Button>

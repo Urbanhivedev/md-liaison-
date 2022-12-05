@@ -13,6 +13,12 @@ import {
 import Layout from "../components/Layout/layout";
 import { useHistory } from "react-router-dom";
 import RectangleIMG from "../assets/images/Rectangle.png";
+import hardcode1 from "../assets/images/hardcode1.jpeg";
+import hardcode2 from "../assets/images/hardcode2.png";
+import hardcode3 from "../assets/images/hardcode3.jpeg";
+import hardcode4 from "../assets/images/hardcode4.jpeg";
+import hardcode5 from "../assets/images/hardcode5.jpeg";
+
 import PopupModal from "../components/Layout/modal";
 
 export default function MyJobs() {
@@ -30,10 +36,14 @@ export default function MyJobs() {
   };
 
   const myJobsArr = [
-    {id: 1, title: 'MERN STACK'},
-    {id: 2, title: 'MERN STACK'},
-    {id: 3, title: 'MERN STACK'},
+    {id: 1, title: 'MERN STACK',company:"Intuitive,",location:"HOUSTON, TX",logo:hardcode1,},
+    {id: 2, title: 'MERN STACK',company:"CVS",location:"HOUSTON, TX",logo:hardcode2,},
+    {id: 3, title: 'MERN STACK',company:"uptown Memorial",location:"HOUSTON, TX",logo:hardcode3,},
+    {id: 3, title: 'MERN STACK',company:"Blue Cross",location:"HOUSTON, TX",logo:hardcode4,},
+    {id: 3, title: 'MERN STACK',company:"Kings Cross",location:"HOUSTON, TX",logo:hardcode5,},
   ];
+
+ 
 
   return (
     <Layout title={"MY JOBS"}>
@@ -59,7 +69,7 @@ export default function MyJobs() {
               <Grid container spacing={1}>
                 <Grid item>
                   <ButtonBase sx={{ width: 128, height: 178, pb: 8 }}>
-                    <img alt="Job-Logo" src={RectangleIMG} />
+                    <img alt="Job-Logo" src={job.logo} />
                   </ButtonBase>
                 </Grid>
                 <Grid item xs={12} sm container>
@@ -72,10 +82,10 @@ export default function MyJobs() {
                         component="div"
                         style={mystyle}
                       >
-                        INTUITIVE
+                        {job.company}
                       </Typography>
                       <Typography variant="body2" gutterBottom style={mystyle}>
-                        HOUSTON, TX
+                        {job.location}
                       </Typography>
                       <hr />
                       <Typography

@@ -182,7 +182,7 @@ export default function ViewJob() {
               type="submit"
               // fullWidth
               variant="contained"
-              style={{backgroundColor: 'black', color: 'white', width: '40%',  fontSize:'15px',position:'relative', left:'30%'}}
+              style={{backgroundColor: 'black', color: 'white', width: '20%',  fontSize:'15px',position:'relative', left:'40%'}}
                sx={{ mt: 7, mb: 2 }}
                
               onClick={applyToRole}
