@@ -35,7 +35,7 @@ export const mainListItems = (
   <>
     <div style={{color: 'wheat'}}>
     <NavLink exact to='/' activeClassName="activeNav"  style={{color: 'black', border: '0px solid red', width: '100%'}}>
-   <center style={{position:"relative",left:"-8%"}}>
+   <center style={{position:"relative",left:"0%"}}>
    <ListItemButton>
       <ListItemText primary={<Typography type="body2" style={mystyle}>HOME</Typography>} />
     </ListItemButton>
@@ -43,7 +43,7 @@ export const mainListItems = (
     </NavLink>
       <br/>
     <NavLink to='/jobs' activeClassName="activeNav" style={{color: 'black', border: '0px solid red', width: '100%'}}>
-    <center style={{position:"relative",left:"-8%"}}>
+    <center style={{position:"relative",left:"0%"}}>
     <ListItemButton>
       <ListItemText primary={<Typography type="body2" style={mystyle}>JOBS</Typography>} />
     </ListItemButton>
@@ -53,13 +53,14 @@ export const mainListItems = (
 
     <div style={{position:"relative",left:"15%"}}>
     <NavLink to='/my-jobs' activeClassName="activeNav" style={{color: 'black', border: '0px solid red', width: '100%'}}>
-    <center style={{position:"relative",left:"-8%"}}>
+    <center style={{position:"relative",left:"0%"}}>
     <ListItemButton >
       <ListItemText primary={<Typography type="body2" style={substyle}>MY JOBS</Typography>} />
     </ListItemButton>
     </center>
     </NavLink>
-    <br/>
+    <br>
+    </br>
     <NavLink to='/applied-jobs' activeClassName="activeNav" style={{color: 'black', border: '0px solid red', width: '100%'}}>
     <center style={{position:"relative",left:"0%"}}>
     <ListItemButton >
@@ -71,7 +72,7 @@ export const mainListItems = (
 
 
     {/*<NavLink to='#' activeClassName="activeNav" >*/}
-    <center style={{color: 'black', border: '0px solid red', width: '100%', position:"relative",left:"-8%"}}>
+    <center style={{color: 'black', border: '0px solid red', width: '100%', position:"relative",left:"0%"}}>
     <ListItemButton >
       <ListItemText primary={<Typography type="body2" style={mystyle}>INBOX</Typography>} />
     </ListItemButton>

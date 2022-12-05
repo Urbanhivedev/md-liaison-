@@ -154,7 +154,7 @@ const Layout = ({ title, children }) => {
           //     : theme.palette.grey[100],
           //     // ? theme.palette.grey[100]
           //     // : theme.palette.grey[900],
-          flexGrow: 1,
+          flexGrow: 2,
           height: '100vh',
           overflow: 'auto',
         }}

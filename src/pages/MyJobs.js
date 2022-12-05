@@ -26,6 +26,11 @@ export default function MyJobs() {
   const history = useHistory();
   const [open, setOpen] = useState(false);
 
+  const causePopUp = () => {
+     setOpen(true)
+    
+  }
+
   const mystyle = {
     fontFamily: "Arial",
     fontStyle: "normal",
@@ -110,7 +115,7 @@ export default function MyJobs() {
                           width: "70%",
                           fontSize: "15px",
                         }}
-                        onClick={() => setOpen(true)}
+                        onClick={()=>{causePopUp()}}
                       >
                         CLOCK IN
                       </Button>

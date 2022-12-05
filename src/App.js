@@ -42,10 +42,10 @@ function App() {
                     <Route path="/signup" component={Signup} />
                     <Route path="/signin" component={Signin} />
                     <Route path="/jobs" component={Jobs} />
-                   
+                    <Route path="/my-jobs" component={MyJobs} />
                     <Route path="/view-job/:id" component={ViewJob} />
                      <Route path="/view-job/" component={ViewJob} />
-                    <Route path="/my-jobs" component={MyJobs} />
+                    
                     <Route path="/applied-jobs" component={AppliedJobs} />
                     </Switch>
                 </ScrollToTop>
