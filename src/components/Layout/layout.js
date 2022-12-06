@@ -17,7 +17,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { mainListItems } from '../Dashboard/list-items';
 import { Link, useHistory, useLocation } from 'react-router-dom'
-import MDliaison from '../../assets/images/MDliaison.png';
+import MDliaison from '../../assets/images/mdliaison.png';
 import PopupModal from './modal';
 
   
@@ -135,7 +135,7 @@ const Layout = ({ title, children }) => {
         </Toolbar>
         <Divider />
         <br/>
-        <img src={MDliaison} alt="" width='138px' height='27px' style={{marginLeft:'50px'}}/>
+        <img src={MDliaison} alt="" width='130px' height='100px' style={{marginLeft:'50px' ,borderRadius:"7%"}}/>
         <br/><br/>
         <List component="nav"  >
           {mainListItems}
