@@ -49,7 +49,7 @@ export const mainListItems = (
     </ListItemButton>
     </center>
     </NavLink>
-    <br/>
+    
 
     <div style={{position:"relative",left:"15%"}}>
     <NavLink to='/my-jobs' activeClassName="activeNav" style={{color: 'black', border: '0px solid red', width: '100%'}}>

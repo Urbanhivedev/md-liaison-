@@ -13,11 +13,11 @@ import {
 import Layout from "../components/Layout/layout";
 import { useHistory } from "react-router-dom";
 import RectangleIMG from "../assets/images/Rectangle.png";
-import hardcode1 from "../assets/images/hardcode1.jpeg";
-import hardcode2 from "../assets/images/hardcode2.png";
-import hardcode3 from "../assets/images/hardcode3.jpeg";
-import hardcode4 from "../assets/images/hardcode4.jpeg";
-import hardcode5 from "../assets/images/hardcode5.jpeg";
+import hardcode1 from "../assets/images/mdliaison3.png";
+import hardcode2 from "../assets/images/mdliaison3.png";
+import hardcode3 from "../assets/images/mdliaison3.png";
+import hardcode4 from "../assets/images/mdliaison3.png";
+import hardcode5 from "../assets/images/mdliaison3.png";
 
 import PopupModal from "../components/Layout/modal";
 

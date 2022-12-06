@@ -137,7 +137,7 @@ const Layout = ({ title, children }) => {
         <br/>
         <img src={MDliaison} alt="" width='138px' height='27px' style={{marginLeft:'50px'}}/>
         <br/><br/>
-        <List component="nav">
+        <List component="nav"  >
           {mainListItems}
           <Divider sx={{ my: 1 }} />
         </List>

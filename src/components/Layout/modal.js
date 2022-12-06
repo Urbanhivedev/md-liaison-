@@ -28,9 +28,7 @@ export default function PopupModal({ open, setOpen}) {
   };
 
 
-  const closeModalPop = async () => {
-   
-  };
+
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
