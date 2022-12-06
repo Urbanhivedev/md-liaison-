@@ -12,7 +12,7 @@ import { Grid } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TextField from '@mui/material/TextField';
 import dayjs from 'dayjs';
-import { LocalizationProvider, MobileDatePicker, TimePicker } from '@mui/lab';
+import { LocalizationProvider, MobileDatePicker, TimePicker } from '@mui/x-date-pickers';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -36,7 +36,7 @@ export default function PopupModal({ open, setOpen}) {
       <Dialog
         open={open}
         TransitionComponent={Transition}
-        keepMounted
+        
         // onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >

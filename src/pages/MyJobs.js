@@ -28,7 +28,7 @@ export default function MyJobs() {
 
   const causePopUp = () => {
      setOpen(true)
-    
+    console.log(open)
   }
 
   const mystyle = {
@@ -100,6 +100,7 @@ export default function MyJobs() {
                       >
                         <b>
                           ACTIVE <span style={{ color: "green" }}>•</span>
+                          
                         </b>
                       </Typography>
                     </Grid>
@@ -115,7 +116,7 @@ export default function MyJobs() {
                           width: "70%",
                           fontSize: "15px",
                         }}
-                        onClick={()=>{causePopUp()}}
+                        onClick={()=>{setOpen(true)}}
                       >
                         CLOCK IN
                       </Button>
