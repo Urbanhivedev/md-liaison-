@@ -29,7 +29,7 @@ const mystyle = {
   // color: '#FFFFFF',
   fontSize: '18px',
   fontWeight: '600',
-  fontFamily: "Poppins",
+  fontFamily: "Roboto",
   lineHeight: '30px'
 };
 const mystyle2 = {
@@ -37,7 +37,7 @@ const mystyle2 = {
   // color: '#FFFFFF',
   fontSize: '17px',
   fontWeight: '600',
-  fontFamily: "Poppins",
+  fontFamily: "Roboto",
   lineHeight: '25px'
 };
 

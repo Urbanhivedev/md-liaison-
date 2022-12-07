@@ -140,11 +140,11 @@ export default function Signin() {
               type="button"
               // fullWidth
               variant="contained"
-              style={{backgroundColor: 'black', height:"40px", width: '30%',  fontSize:"15px"}}
+              style={{backgroundColor: 'black',color:"white", height:"40px", width: '30%',  fontSize:"15px"}}
               onClick = {userSignin}
             //   sx={{ mt: 3, mb: 2 }}
             >
-              SUBMIT
+              LOGIN
             </Button>
             </center>
               </Grid>
