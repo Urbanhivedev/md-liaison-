@@ -41,9 +41,9 @@ export default function MyJobs() {
   };
 
   const myJobsArr = [
-    {id: 1, title: 'MERN STACK',company:"Intuitive,",location:"HOUSTON, TX",logo:hardcode1,},
+    {id: 1, title: 'MERN STACK',company:"Intuitive",location:"HOUSTON, TX",logo:hardcode1,},
     {id: 2, title: 'MERN STACK',company:"CVS",location:"HOUSTON, TX",logo:hardcode2,},
-    {id: 3, title: 'MERN STACK',company:"uptown Memorial",location:"HOUSTON, TX",logo:hardcode3,},
+    {id: 3, title: 'MERN STACK',company:"Uptown Memorial",location:"HOUSTON, TX",logo:hardcode3,},
     {id: 3, title: 'MERN STACK',company:"Blue Cross",location:"HOUSTON, TX",logo:hardcode4,},
     {id: 3, title: 'MERN STACK',company:"Kings Cross",location:"HOUSTON, TX",logo:hardcode5,},
   ];

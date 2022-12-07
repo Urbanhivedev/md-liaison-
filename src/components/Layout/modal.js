@@ -40,7 +40,7 @@ export default function PopupModal({ open, setOpen}) {
         // onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <center><DialogTitle>{"Select Clock In"}<span className='wave'>⏲</span></DialogTitle></center>
+        <center><DialogTitle>{"Select Clock In"}&nbsp;&nbsp;<span className='wave'>⏲</span></DialogTitle></center>
         <Divider />
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description" style={{color: 'black'}}>
@@ -53,8 +53,13 @@ export default function PopupModal({ open, setOpen}) {
           label="DATE"
           inputFormat="DD/MMMM/YYYY"
           value={value}
+         
           onChange={handleChange}
-          renderInput={(params) => <TextField fullWidth {...params} />}
+          renderInput={(params) => <TextField sx={{
+            "& .MuiInputBase-input": {
+              height: "40px" // Set your height here.
+            }
+          }} fullWidth {...params} />}
         />
         </Grid>
         <Grid item xs={6} md={2}>
@@ -63,17 +68,27 @@ export default function PopupModal({ open, setOpen}) {
         <Grid item xs={6} md={4}>
         <TimePicker
           label="FROM"
+          
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField fullWidth {...params} />}
+          renderInput={(params) => <TextField sx={{
+            "& .MuiInputBase-input": {
+              height: "40px" // Set your height here.
+            }
+          }} fullWidth {...params} />}
         />
         </Grid>
         <Grid item xs={6} md={4}>
         <TimePicker
           label="TO"
+          
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField fullWidth {...params} />}
+          renderInput={(params) => <TextField sx={{
+            "& .MuiInputBase-input": {
+              height: "40px" // Set your height here.
+            }
+          }} fullWidth {...params} />}
         />
         </Grid>
       </Grid>
