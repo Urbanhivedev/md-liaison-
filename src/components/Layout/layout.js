@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux';
-import { mainListItems } from '../Dashboard/list-items';
+
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import MDliaison from '../../assets/images/mdliaisonpic.png';
 import NestedList, { ListMenu2 } from '../Dashboard/list-items2';
