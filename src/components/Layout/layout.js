@@ -17,7 +17,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { mainListItems } from '../Dashboard/list-items';
 import { Link, useHistory, useLocation } from 'react-router-dom'
-import MDliaison from '../../assets/images/mdliaison.png';
+import MDliaison from '../../assets/images/mdliaisonpic.png';
+import NestedList, { ListMenu2 } from '../Dashboard/list-items2';
 import PopupModal from './modal';
 
   
@@ -138,7 +139,7 @@ const Layout = ({ title, children }) => {
         <img src={MDliaison} alt="" width='130px' height='100px' style={{marginLeft:'50px' ,borderRadius:"7%"}}/>
         <br/><br/>
         <List component="nav"  >
-          {mainListItems}
+          {/*mainListItems*/}<NestedList />
           <Divider sx={{ my: 1 }} />
         </List>
       </Drawer>
