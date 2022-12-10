@@ -12,7 +12,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import SearchBar from "material-ui-search-bar";
+//import SearchBar from "material-ui-search-bar";
 import { makeStyles } from "@material-ui/core";
 import JobList from "../components/Jobs/job-list";
 

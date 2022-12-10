@@ -19,7 +19,7 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 import { styled } from '@mui/styles';
 import { Button, Grid, makeStyles } from '@material-ui/core';
 import { Link, NavLink, useHistory } from 'react-router-dom';
-import SearchBar from 'material-ui-search-bar';
+//import SearchBar from 'material-ui-search-bar';
 
 /*REDUX AND FIREBASE IMPORTS */
 import { useDispatch, useSelector } from 'react-redux';
@@ -181,11 +181,11 @@ export default function JobList() {
 
   return (
     <>
-      <SearchBar
+      {/*<SearchBar
           value={searched}
           onChange={(searchVal) => requestSearch(searchVal)}
           onCancelSearch={() => cancelSearch()}
-        />
+  />*/}
         <hr/>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
